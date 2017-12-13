@@ -1,0 +1,52 @@
+{
+  "name": "metal-jsx-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for creating metal-jsx components",
+  "author": "Bryce Osterhaus",
+  "license": "MIT",
+  "main": "lib/MyComponent.js",
+  "jsnext:main": "src/MyComponent.js",
+  "scripts": {
+    "build": "babel -d lib/ src/",
+    "format": "eslint . --ignore-pattern node_modules --ignore-pattern lib --fix",
+    "lint": "eslint . --ignore-pattern node_modules --ignore-pattern lib",
+    "prepublish": "npm run build",
+    "test": "jest"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "snapshotSerializers": [
+      "metal-jest-serializer"
+    ],
+    "timers": "fake"
+  },
+  "babel": {
+    "presets": [
+      "metal-jsx",
+      "es2015"
+    ]
+  },
+  "dependencies": {
+    "metal-jsx": "^2.15.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-jest": "^21.2.0",
+    "babel-preset-metal-jsx": "0.1.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "eslint": "^4.13.1",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.5.1",
+    "jest": "^21.2.1",
+    "metal-jest-serializer": "^1.0.1",
+    "prettier": "^1.9.2"
+  }
+}
